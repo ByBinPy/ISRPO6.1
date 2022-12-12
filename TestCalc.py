@@ -32,24 +32,6 @@ class TestsCalc(unittest.TestCase):
         
         self.assertEqual(calc("/",1,1),1)
         
-    def test_invalid_variants(self):
-        self.assertEqual(calc("*","a",1),None)
-
-        self.assertEqual(calc("*",2,"a"),None)
-
-        self.assertEqual(calc("*","a","b"),None)
-
-        self.assertEqual(calc("1",1,1),None)
-
-        self.assertEqual(calc("&","a",1),None)
-
-        self.assertEqual(calc("_",1,"a"),None)
-
-        self.assertEqual(calc("(-)","b","c"),None)
-
-        self.assertEqual(calc("+-*/","a",1),None)
-        
-
 if __name__ == "__main__":
     unittest.main()
     
