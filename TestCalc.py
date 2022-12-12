@@ -19,7 +19,6 @@ class TestsCalc(unittest.TestCase):
 
         self.assertEqual(calc("-",100,1),99)
 
-        self.assertEqual(calc("-",742662552295,558841236563967420285),558841236563967420285)
     def test_proiz(self):
         
         self.assertEqual(calc("*",1,1),1)
