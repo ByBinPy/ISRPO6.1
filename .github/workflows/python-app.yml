@@ -1,6 +1,4 @@
 name: Run tests on any Push event
-# Запуск при любом push евенте в любой ветке, за исключением релизных тэгов.
-# Они будт тестироваться перед сборкой
 on:
   push:
     tags:
@@ -8,7 +6,7 @@ on:
     branches:
       - '*'
 jobs:
-  run_tests:
+  test_build:
     runs-on: [ubuntu-latest]
     steps:
       # Чекаутим код
@@ -22,6 +20,8 @@ jobs:
         run: pip freeze > requirements.txt
       - name: Install requirements
         run: pip install -r requirements.txt
+      - name: Add Reporter
+        run: pip install coverage
       - name: Run tests
         run: coverage run TestCalc.py
       - name: Tests report
